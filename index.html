@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proper - Writing Consultancy</title>
+    <style>
+        @font-face {
+            font-family: 'Wolpe Pegasus';
+            src: url('/mnt/data/Wolpe Pegasus W04 Regular copy.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Wolpe Pegasus', sans-serif;
+            color: #110E8E;
+            background-color: #E6E6FA;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #110E8E;
+            color: #FFFFFF;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .language-switcher button {
+            background-color: #FFFFFF;
+            color: #110E8E;
+            border: 1px solid #110E8E;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .language-switcher button:hover {
+            background-color: #110E8E;
+            color: #FFFFFF;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .client-logos img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .contact-form {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            margin-top: 0;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea, .contact-form button {
+            padding: 10px;
+            border: 1px solid #110E8E;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background-color: #110E8E;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0D0B7A;
+        }
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Proper</h1>
+        <p>Helping Swedish companies write in Proper English.</p>
+        <div class="language-switcher">
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('sv')">Svenska</button>
+        </div>
+    </header>
+
+    <section class="services">
+        <h2 data-lang="en" style="display: block;">Our Services</h2>
+        <h2 data-lang="sv" style="display: none;">Våra Tjänster</h2>
+        <p data-lang="en" style="display: block;">We specialize in ensuring your communication is clear, professional, and accurate. From website copy to technical documents, we help you deliver content in proper English.</p>
+        <p data-lang="sv" style="display: none;">Vi specialiserar oss på att säkerställa att din kommunikation är tydlig, professionell och korrekt. Från webbtexter till tekniska dokument, hjälper vi dig att leverera innehåll på korrekt engelska.</p>
+    </section>
+
+    <section class="client-logos">
+        <h2 data-lang="en" style="display: block;">Our Clients</h2>
+        <h2 data-lang="sv" style="display: none;">Våra Klienter</h2>
+        <img src="/mnt/data/kry-logo.png" alt="Kry Logo">
+        <img src="/mnt/data/einride-logo.jpeg" alt="Einride Logo">
+        <a href="https://www.maginteractive.com" target="_blank">
+            <img src="/mnt/data/mag-logo.jpg" alt="MAG Interactive Logo">
+        </a>
+    </section>
+
+    <section class="contact-form">
+        <h3 data-lang="en" style="display: block;">Contact Us</h3>
+        <h3 data-lang="sv" style="display: none;">Kontakta Oss</h3>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required data-lang="en" style="display: block;">
+            <input type="text" name="name" placeholder="Ditt Namn" required data-lang="sv" style="display: none;">
+            <input type="email" name="email" placeholder="Your Email" required data-lang="en" style="display: block;">
+            <input type="email" name="email" placeholder="Din E-post" required data-lang="sv" style="display: none;">
+            <textarea name="message" placeholder="Your Message" rows="5" required data-lang="en" style="display: block;"></textarea>
+            <textarea name="message" placeholder="Ditt Meddelande" rows="5" required data-lang="sv" style="display: none;"></textarea>
+            <button type="submit" data-lang="en" style="display: block;">Send</button>
+            <button type="submit" data-lang="sv" style="display: none;">Skicka</button>
+        </form>
+    </section>
+</body>
+</html>
